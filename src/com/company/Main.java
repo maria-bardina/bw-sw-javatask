@@ -7,7 +7,7 @@ import java.nio.charset.StandardCharsets;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        String fileName = "/home/bardina_md/Coordinates.txt";
+        String fileName = "/Users/masulenickabardina/Documents/Coordinates.txt";
 
         String line = readUsingBufferedReader(fileName, StandardCharsets.UTF_8);
 
@@ -79,42 +79,42 @@ public class Main {
         //pole[kx][ky] = 2;
         int kbx = kx + 2;
         int kby = ky + 1;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
             pole[kbx][kby] = 1;
         }
         kbx = kx - 2;
         kby = ky + 1;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
             pole[kbx][kby] = 1;
         }
         kbx = kx + 2;
         kby = ky - 1;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
             pole[kbx][kby] = 1;
         }
         kbx = kx - 2;
         kby = ky - 1;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
             pole[kbx][kby] = 1;
         }
         kbx = kx + 1;
         kby = ky - 2;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
             pole[kbx][kby] = 1;
         }
         kbx = kx - 1;
         kby = ky - 2;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
             pole[kbx][kby] = 1;
         }
         kbx = kx - 1;
         kby = ky + 2;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
             pole[kbx][kby] = 1;
         }
         kbx = kx + 1;
         kby = ky + 2;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
             pole[kbx][kby] = 1;
         }
 
@@ -128,7 +128,7 @@ public class Main {
         }
         System.out.println(sum);
 
-        File file=new File("/home/bardina_md/Coordinate2.txt");
+        File file=new File("/Users/masulenickabardina/Documents/Coordinate2.txt");
         if(file.exists()){
             file.delete();
         }
