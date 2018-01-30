@@ -97,7 +97,12 @@ public class Main {
         if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
             pole[kbx][kby] = 1;
         }
-        kbx = kx + 2;
+        kbx = kx + 1;
+        kby = ky - 2;
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+            pole[kbx][kby] = 1;
+        }
+        kbx = kx - 1;
         kby = ky - 2;
         if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
             pole[kbx][kby] = 1;
@@ -112,11 +117,7 @@ public class Main {
         if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
             pole[kbx][kby] = 1;
         }
-        kbx = kx - 1;
-        kby = ky + 2;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
-            pole[kbx][kby] = 1;
-        }
+
 
         int sum = 0;
 
