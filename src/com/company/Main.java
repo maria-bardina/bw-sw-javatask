@@ -39,7 +39,7 @@ public class Main {
             }
         }
 
-        //kon'
+        //ferz'
 
         for (int x = 0; x < 8; x++) {
             int y = x - (fx - fy);
@@ -49,9 +49,8 @@ public class Main {
             }
         }
 
-
         for (int x = 0; x < 8; x++) {
-            int y = (7 + (fy - (7 - fx)) - x);
+            int y = fy + fx - x;
             if (y < 8 & y >= 0 & !(x == fx & y == fy) & !(x == kx & y == ky) & !(x == lx & y == ly)) {
                 pole[x][y] = 1;
 
@@ -75,7 +74,67 @@ public class Main {
         //pole[fx][fy] = 2;
 
 
+        //kon'
 
+        //pole[kx][ky] = 2;
+        int kbx = kx + 2;
+        int kby = ky + 1;
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+            pole[kbx][kby] = 1;
+        }
+        kbx = kx - 2;
+        kby = ky + 1;
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+            pole[kbx][kby] = 1;
+        }
+        kbx = kx + 2;
+        kby = ky - 1;
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+            pole[kbx][kby] = 1;
+        }
+        kbx = kx - 2;
+        kby = ky - 1;
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+            pole[kbx][kby] = 1;
+        }
+        kbx = kx + 2;
+        kby = ky - 2;
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+            pole[kbx][kby] = 1;
+        }
+        kbx = kx - 1;
+        kby = ky + 2;
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+            pole[kbx][kby] = 1;
+        }
+        kbx = kx + 1;
+        kby = ky + 2;
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+            pole[kbx][kby] = 1;
+        }
+        kbx = kx - 1;
+        kby = ky + 2;
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kx == fx & ky == fy) & !(kx == lx & ky == ly)) {
+            pole[kbx][kby] = 1;
+        }
+
+        int sum = 0;
+
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                sum = sum + pole[i][j];
+            }
+        }
+        System.out.println(sum);
+
+        File file=new File("/home/bardina_md/Coordinate2.txt");
+        if(file.exists()){
+            file.delete();
+        }
+        FileWriter writer = new FileWriter(file, true);
+        PrintWriter output = new PrintWriter(writer);
+        output.write(String.valueOf(sum));
+        output.close();
 
 
       for (int i = 0; i < 8; i++) {
