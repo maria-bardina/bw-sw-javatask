@@ -79,42 +79,42 @@ public class Main {
         //pole[kx][ky] = 2;
         int kbx = kx + 2;
         int kby = ky + 1;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
+        if (check_kon(fx, fy, lx, ly, kbx, kby)) {
             pole[kbx][kby] = 1;
         }
         kbx = kx - 2;
         kby = ky + 1;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
+        if (check_kon(fx, fy, lx, ly, kbx, kby)) {
             pole[kbx][kby] = 1;
         }
         kbx = kx + 2;
         kby = ky - 1;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
+        if (check_kon(fx, fy, lx, ly, kbx, kby)) {
             pole[kbx][kby] = 1;
         }
         kbx = kx - 2;
         kby = ky - 1;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
+        if (check_kon(fx, fy, lx, ly, kbx, kby)) {
             pole[kbx][kby] = 1;
         }
         kbx = kx + 1;
         kby = ky - 2;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
+        if (check_kon(fx, fy, lx, ly, kbx, kby)) {
             pole[kbx][kby] = 1;
         }
         kbx = kx - 1;
         kby = ky - 2;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
+        if (check_kon(fx, fy, lx, ly, kbx, kby)) {
             pole[kbx][kby] = 1;
         }
         kbx = kx - 1;
         kby = ky + 2;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
+        if (check_kon(fx, fy, lx, ly, kbx, kby)) {
             pole[kbx][kby] = 1;
         }
         kbx = kx + 1;
         kby = ky + 2;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
+        if (check_kon(fx, fy, lx, ly, kbx, kby)) {
             pole[kbx][kby] = 1;
         }
 
@@ -151,6 +151,10 @@ public class Main {
     }
         System.out.println("\tA\tB\tC\tD\tE\tF\tG\tH");
 }
+
+    private static boolean check_kon(int fx, int fy, int lx, int ly, int kbx, int kby) {
+        return kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly);
+    }
 
     private static boolean check(int fx, int fy, int ly, int x) {
         return x == fx & ly == fy;
