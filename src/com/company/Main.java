@@ -28,13 +28,13 @@ public class Main {
 
         //ladja
         for (int x = 0; x < 8; x++) {
-            if (!(x == fx & ly == fy) & !(x == kx & ly == ky) & !(x == lx)) {
+            if (!check(fx, fy, ly, x) & !(check(kx, ky, ly, x)) & !(x == lx)) {
                 pole[x][ly] = 1;
             }
         }
 
         for (int y = 0; y < 8; y++) {
-            if (!(y == ly) & !(lx == fx & y == fy) & !(lx == kx & y == ky)) {
+            if (!(y == ly) & !(check(fx, fy, y, lx)) & !(check(kx, ky, y, lx))) {
                 pole[lx][y] = 1;
             }
         }
@@ -43,7 +43,7 @@ public class Main {
 
         for (int x = 0; x < 8; x++) {
             int y = x - (fx - fy);
-            if (y < 8 & y >= 0 & !(x == fx & y == fy) & !(x == kx & y == ky) & !(x == lx & y == ly)) {
+            if (y < 8 & y >= 0 & !(check(fx, fy, y, x)) & !(check(kx, ky, y, x)) & !(check(lx, ly, y, x))) {
                 pole[x][y] = 1;
 
             }
@@ -51,20 +51,20 @@ public class Main {
 
         for (int x = 0; x < 8; x++) {
             int y = fy + fx - x;
-            if (y < 8 & y >= 0 & !(x == fx & y == fy) & !(x == kx & y == ky) & !(x == lx & y == ly)) {
+            if (y < 8 & y >= 0 & !(check(fx, fy, y, x)) & !(check(kx, ky, y, x)) & !(check(lx, ly, y, x))) {
                 pole[x][y] = 1;
 
             }
         }
 
         for (int x = 0; x < 8; x++) {
-            if (!(x == fx) & !(x == kx & fy == ky) & !(x == lx & fy == ly)) {
+            if (!(x == fx) & !(check(kx, ky, fy, x)) & !(check(lx, ly, fy, x))) {
                 pole[x][fy] = 1;
             }
         }
 
         for (int y = 0; y < 8; y++) {
-            if (!(y == fy) & !(fx == kx & y == ky) & !(fx == lx & y == ly)) {
+            if (!(y == fy) & !(check(kx, ky, y, fx)) & !(check(lx, ly, y, fx))) {
                 pole[fx][y] = 1;
 
             }
@@ -79,42 +79,42 @@ public class Main {
         //pole[kx][ky] = 2;
         int kbx = kx + 2;
         int kby = ky + 1;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
             pole[kbx][kby] = 1;
         }
         kbx = kx - 2;
         kby = ky + 1;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
             pole[kbx][kby] = 1;
         }
         kbx = kx + 2;
         kby = ky - 1;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
             pole[kbx][kby] = 1;
         }
         kbx = kx - 2;
         kby = ky - 1;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
             pole[kbx][kby] = 1;
         }
         kbx = kx + 1;
         kby = ky - 2;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
             pole[kbx][kby] = 1;
         }
         kbx = kx - 1;
         kby = ky - 2;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
             pole[kbx][kby] = 1;
         }
         kbx = kx - 1;
         kby = ky + 2;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
             pole[kbx][kby] = 1;
         }
         kbx = kx + 1;
         kby = ky + 2;
-        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
+        if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(check(fx, fy, kby, kbx)) & !(check(lx, ly, kby, kbx))) {
             pole[kbx][kby] = 1;
         }
 
@@ -151,6 +151,11 @@ public class Main {
     }
         System.out.println("\tA\tB\tC\tD\tE\tF\tG\tH");
 }
+
+    private static boolean check(int fx, int fy, int ly, int x) {
+        return x == fx & ly == fy;
+    }
+
     private static String readUsingBufferedReader(String fileName, Charset cs) throws IOException {
         File file = new File(fileName);
         FileInputStream fis = new FileInputStream(file);
