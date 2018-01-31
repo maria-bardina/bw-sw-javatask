@@ -34,7 +34,7 @@ public class Main {
         }
 
         for (int y = 0; y < 8; y++) {
-            if (!(y == fy) & !(fx == kx & y == ky) & !(fx == lx & y == ly)) {
+            if (!(y == ly) & !(lx == fx & y == fy) & !(lx == kx & y == ky)) {
                 pole[lx][y] = 1;
             }
         }
@@ -117,6 +117,10 @@ public class Main {
         if (kbx >= 0 & kbx < 8 & kby >= 0 & kby < 8 & !(kbx == fx & kby == fy) & !(kbx == lx & kby == ly)) {
             pole[kbx][kby] = 1;
         }
+
+       /* pole[kx][ky] = 2;
+        pole[lx][ly]  =3;
+        pole[fx][fy] =4;*/
 
 
         int sum = 0;
